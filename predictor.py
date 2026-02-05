@@ -6,10 +6,10 @@ from sklearn.ensemble import RandomForestRegressor
 st.set_page_config(page_icon="🏏",page_title="score prediction")
 st.title("**🏏 CRICKET SCORE PREDICTOR**")
 # st.write("Cricket is often called the *game of gentlemen* because it emphasizes fair play, respect, and sportsmanship. Players are expected to follow the rules honestly and show respect toward opponents, officials, and the spirit of the game. Along with physical skill and strategy, cricket values discipline and good conduct on and off the field. This tradition of integrity and mutual respect is what gives cricket its reputation as a noble and gentlemanly sport")
-model = joblib.load(r"d:\nikhil\python\ds\project3.py\score.joblib")
-team_encoder = pickle.load(open(r"d:\nikhil\python\ds\project3.py\team.pkl", "rb"))
-city_encoder = pickle.load(open(r"d:\nikhil\python\ds\project3.py\own.pkl","rb"))
-team_encode = pickle.load(open(r"d:\nikhil\python\ds\project3.py\trans.pkl","rb"))
+model = joblib.load("score.joblib")
+team_encoder = pickle.load(open("team.pkl", "rb"))
+city_encoder = pickle.load(open("own.pkl","rb"))
+team_encode = pickle.load(open("trans.pkl","rb"))
 
 team=st.selectbox(label="batting team",options=team_encoder.classes_)
 team2=st.selectbox(label="bowling team",options=team_encoder.classes_)
@@ -32,3 +32,4 @@ if st.button(label="predict"):
     res=model.predict([st.session_state.data])
 
     st.write(res)
+
