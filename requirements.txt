@@ -5,10 +5,11 @@ numpy
 plotly
 seaborn
 matplotlib
-joblib
 pickle
 LabelEncoder
 RandomForestRegressor
-scikit-learn
+scikit-learn==1.3.2
+joblib==1.3.2
+
 
 
