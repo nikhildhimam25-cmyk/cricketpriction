@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 import joblib
 import pickle
 from sklearn.preprocessing import LabelEncoder
@@ -31,4 +30,5 @@ innings=st.number_input(label="inning",min_value=1,max_value=2)
 st.session_state.data=[batteam,bowling_team,city_enc,delivery_left,score,runrate,wicket,runlast,wiklast,innings]
 if st.button(label="predict"):
     res=model.predict([st.session_state.data])
+
     st.write(res)
